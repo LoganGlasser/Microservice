@@ -1,0 +1,32 @@
+[
+  {
+    "name": "John Doe",
+    "age": 18,
+    "gender": "male"
+  },
+  {
+    "name": "Carla",
+    "age": 24,
+    "gender": "female"
+  },
+  {
+    "name": "Logan Glasser",
+    "age": "20",
+    "gender": "Male"
+  },
+  {
+    "name": "Hogan Hasser",
+    "age": "21",
+    "gender": "Male"
+  },
+  {
+    "name": "Joe Biden",
+    "age": "80",
+    "gender": "Male"
+  },
+  {
+    "name": "Joe Guy",
+    "age": "65",
+    "gender": "Male"
+  }
+]

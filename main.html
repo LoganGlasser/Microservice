@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Button Data</title>
+
+        <!-- This is a 3rd-party stylesheet to incorporate the font family to be used for this page ("Roboto"). -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="style.css" media="screen">
+
+        <script type = "module" src="index.js" charset="utf-8" defer></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+
+    <body>
+        <!-- help gotten from this video: https://www.youtube.com/watch?v=FpDktqhwQik-->
+        <h1>formData Data:</h2>
+        <p id = "data"></p>
+        <script type = "text/javascript">
+            fetch('./formData.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) { 
+                for(var i =0; i < data.length; i++) {
+                    document.getElementById("data").innerHTML +=        //this sets the html content of the data element. Essentially we are adding to one print, and adding line breaks
+                    data[i].name+ " is a " + data[i].age + " year old " + data[i].gender + "<br />";
+                }
+            })
+
+        </script>
+
+
+        <!-- adapted from my code from my cs290 class-->
+        <button type="button" id="create-form-button"></button>
+
+        <div id="modal-backdrop" class="hidden"></div>      <!-- this is the backdrop thing that pops up when you click the button, hiding the other things-->
+        <div id="create-form-modal" class="hidden">         <!-- default of these is hidden, javascript will un-hide these after you press button-->
+        <div class="modal-dialog">
+
+            <div class="modal-header">
+                <h3>Enter Necessary Info</h3>
+                <button type="button" class="modal-close-button">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-input-element">
+                    <label for="form-name-input">Name</label>
+                    <input type="text" id="form-name-input">
+                </div>
+                <div class="form-input-element">
+                    <label for="form-age-input">Age</label>
+                    <input type="text" id="form-age-input">
+                </div>
+                <div class="form-input-element">
+                    <label for="form-gender-input">Gender</label>
+                    <input type="text" id="form-gender-input">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="modal-cancel-button">Cancel</button>
+                <button type="button" class="modal-accept-button">Submit info</button>
+            </div>
+
+        </div>
+        </div>
+
+    </body>
+
