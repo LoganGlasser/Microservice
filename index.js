@@ -60,7 +60,7 @@ function createFormButtonListener(event) {
 
 function createForm(inputName, inputAge, inputGender) {
     let data = { name: inputName, age: inputAge, gender: inputGender };
-    var reqUrl = "api";              //the slashes are different here, due to how he did people/ and im just doing /
+    var reqUrl = "api";              
         fetch(reqUrl, {
             method: 'POST',
             body: JSON.stringify(data),
